@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 const connectDB = async () => {
   try {
     mongoose.set('strictQuery', false);
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/medfind');
+    const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error('❌ Database connection failed:', error.message);
